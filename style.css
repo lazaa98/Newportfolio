@@ -1,0 +1,781 @@
+@charset "UTF-8";
+body,
+html {
+  height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --white: #afafaf;
+  --red: #e31b23;
+  --bodyColor: #292a2b;
+  --borderFormEls: hsl(0, 0%, 10%);
+  --bgFormEls: hsl(0, 0%, 14%);
+  --bgFormElsFocus: hsl(0, 7%, 20%);
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 300px;
+  z-index: 99;
+  font-size: 18px;
+  border: 1px solid #bbc800;
+  outline: none;
+  background-color: #1b1b1b;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#myBtn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+button,
+label {
+  cursor: pointer;
+}
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* Remove native arrow on IE */
+select::-ms-expand {
+  display: none;
+}
+
+/*Remove dotted outline from selected option on Firefox*/
+/*https://stackoverflow.com/questions/3773430/remove-outline-from-select-box-in-ff/18853002#18853002*/
+/*We use !important to override the color set for the select on line 99*/
+select:-moz-focusring {
+  color: transparent !important;
+  text-shadow: 0 0 0 var(--white);
+}
+
+textarea {
+  resize: none;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font: 18px/1.5 "Open Sans", sans-serif;
+  background: var(--bodyColor);
+  color: var(--white);
+  margin: 1.5rem 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* FORM ELEMENTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.my-form h1 {
+  margin-bottom: 1.5rem;
+}
+
+.my-form li,
+.my-form .grid > *:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.my-form select,
+.my-form input,
+.my-form textarea,
+.my-form button {
+  width: 100%;
+  line-height: 1.5;
+  padding: 15px 10px;
+  border: 1px solid var(--borderFormEls);
+  color: var(--white);
+  background: var(--bgFormEls);
+  -webkit-transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25), -webkit-transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25), -webkit-transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25), transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+  transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25), transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25), -webkit-transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.my-form textarea {
+  height: 170px;
+}
+
+.my-form ::-webkit-input-placeholder {
+  color: inherit;
+  /*Fix opacity issue on Firefox*/
+  opacity: 1;
+}
+
+.my-form :-ms-input-placeholder {
+  color: inherit;
+  /*Fix opacity issue on Firefox*/
+  opacity: 1;
+}
+
+.my-form ::-ms-input-placeholder {
+  color: inherit;
+  /*Fix opacity issue on Firefox*/
+  opacity: 1;
+}
+
+.my-form ::placeholder {
+  color: inherit;
+  /*Fix opacity issue on Firefox*/
+  opacity: 1;
+}
+
+.my-form select:focus,
+.my-form input:focus,
+.my-form textarea:focus,
+.my-form button:enabled:hover,
+.my-form button:focus,
+.my-form input[type="checkbox"]:focus + label {
+  background: var(--bgFormElsFocus);
+}
+
+.my-form select:focus,
+.my-form input:focus,
+.my-form textarea:focus {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.my-form *:required,
+.my-form select {
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 15px 15px;
+}
+
+.my-form *:required {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg);
+}
+
+.my-form select {
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/down.svg);
+}
+
+.my-form *:disabled {
+  cursor: default;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
+/* FORM BTNS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.my-form .required-msg {
+  display: none;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg) no-repeat center left/15px 15px;
+  padding-left: 20px;
+}
+
+.my-form .btn-grid {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: -webkit-filter 0.2s;
+  transition: -webkit-filter 0.2s;
+  transition: filter 0.2s;
+  transition: filter 0.2s, -webkit-filter 0.2s;
+}
+
+.my-form button {
+  font-weight: bold;
+}
+
+.my-form button > * {
+  display: inline-block;
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+}
+
+.my-form button .back {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-110%, -50%);
+          transform: translate(-110%, -50%);
+}
+
+.my-form button:enabled:hover .back,
+.my-form button:focus .back {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.my-form button:enabled:hover .front,
+.my-form button:focus .front {
+  -webkit-transform: translateX(110%);
+          transform: translateX(110%);
+}
+
+/* CUSTOM CHECKBOX
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.my-form input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.my-form input[type="checkbox"] + label {
+  position: relative;
+  display: inline-block;
+  padding-left: 2rem;
+  -webkit-transition: background 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+  transition: background 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+.my-form input[type="checkbox"] + label::before,
+.my-form input[type="checkbox"] + label::after {
+  content: '';
+  position: absolute;
+}
+
+.my-form input[type="checkbox"] + label::before {
+  left: 0;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--white);
+}
+
+.my-form input[type="checkbox"]:checked + label::before {
+  background: var(--red);
+}
+
+.my-form input[type="checkbox"]:checked + label::after {
+  left: 7px;
+  top: 7px;
+  width: 6px;
+  height: 14px;
+  border-bottom: 2px solid var(--white);
+  border-right: 2px solid var(--white);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+@media screen and (min-width: 600px) {
+  .my-form .grid {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 1.5rem;
+  }
+  .my-form .grid-2 {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .my-form .grid-3 {
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .my-form .grid > *:not(:last-child) {
+    margin-bottom: 0;
+  }
+  .my-form .required-msg {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 541px) {
+  .my-form input[type="checkbox"] + label::before {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  .my-form input[type="checkbox"]:checked + label::after {
+    top: 3px;
+  }
+}
+
+.project {
+  border: 3px solid black;
+  width: 33.333%;
+  min-width: 320px;
+  overflow: hidden;
+  position: relative;
+  background: black;
+  padding: 0;
+  margin: 0;
+  float: left;
+  height: 300px;
+}
+
+.project img {
+  opacity: .5;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: opacity .35s linear, -webkit-transform .35s ease;
+  transition: opacity .35s linear, -webkit-transform .35s ease;
+  transition: opacity .35s linear, transform .35s ease;
+  transition: opacity .35s linear, transform .35s ease, -webkit-transform .35s ease;
+  width: 100%;
+}
+
+.project figurecaption {
+  position: absolute;
+  width: 100%;
+  height: 35px;
+  background: rgba(145, 145, 145, 0.35);
+  bottom: 0px;
+  left: 0;
+  padding: 7px;
+  -webkit-transition: color .35s ease, background .35s ease;
+  transition: color .35s ease, background .35s ease;
+}
+
+.project .description {
+  width: 33%;
+  position: absolute;
+  bottom: 35px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  border-right: 1px solid #f4ede4;
+  color: #f4ede4;
+  padding: 5px;
+  margin: 0;
+  -webkit-transition: left 1.5s ease, opacity 1s ease;
+  transition: left 1.5s ease, opacity 1s ease;
+}
+
+.project:hover img {
+  opacity: 1;
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+
+.project:hover .description {
+  left: calc(-33% + 1px);
+  opacity: .5;
+}
+
+/* toggle .attention for touch and focus events in js for mobile and people not using a mouse */
+.project.attention img {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.project.attention .description {
+  left: calc(-33% - 8px);
+  opacity: .5;
+}
+
+.more-link {
+  background: #d01516;
+  padding: 3px 10px;
+  border-radius: 10px;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  text-decoration: none;
+  color: white;
+}
+
+.more-link:hover,
+.more-link:active {
+  opacity: .75;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+header {
+  position: relative;
+}
+
+header .container {
+  max-width: 1368px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+header .container .navbar {
+  min-height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .container .navbar .logo {
+  font-size: 2.25rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+}
+
+header .container .navbar .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .container .navbar .nav-links li {
+  list-style-type: none;
+}
+
+header .container .navbar .nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 1.25rem;
+  font-weight: 500;
+  font-size: 1.05rem;
+  position: relative;
+}
+
+header .container .navbar .nav-links li a::after {
+  position: absolute;
+  content: '';
+  background-color: #fff;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+
+header .container .navbar .nav-links li a:hover::after {
+  width: 100%;
+}
+
+header .container .navbar .nav-links button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  margin: 0 1rem;
+  border-radius: 6px;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 500;
+}
+
+header .container .navbar i {
+  display: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+header .container .showcase h1 {
+  font-size: 40px;
+}
+
+header .video-container {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+header .video-container video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+header .video-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.82);
+}
+
+@media (max-width: 850px) {
+  header .container .navbar .nav-links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    height: 100%;
+    width: 225px;
+    margin: 0;
+    padding: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: 0.4s ease all;
+    transition: 0.4s ease all;
+    z-index: 10;
+  }
+  header .container .navbar .nav-links li a {
+    color: #000;
+  }
+  header .container .navbar .nav-links li a::after {
+    background-color: #000;
+  }
+  header .container .navbar .nav-links button {
+    border-color: #000;
+    color: #000;
+    padding: 0.75rem 1.5rem;
+  }
+  header .container .navbar .nav-links.active {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  header .container .navbar i {
+    display: block;
+  }
+  header .container .showcase {
+    min-height: 80vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+  header .container .showcase h1 {
+    font-size: 2.25rem;
+  }
+  #portfolio {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+  }
+  #myBtn {
+    right: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  header .container .showcase h1 {
+    font-size: 2.1rem;
+  }
+  header .container .showcase p {
+    font-size: 0.85rem;
+    width: 300px;
+  }
+}
+
+.navbar-default {
+  background: #232526;
+  background: -webkit-gradient(linear, left top, right top, from(#414345), to(#232526));
+  background: linear-gradient(to right, #414345, #232526);
+}
+
+.pmg1,
+.pmg2,
+.pmg3 {
+  position: relative;
+  opacity: 0.8;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.pmg1 {
+  background-image: url("http://bit.ly/2phtpbG");
+  min-height: 100%;
+}
+
+.pmg2 {
+  background-image: url("http://bit.ly/2FF6Jx0");
+  min-height: 400px;
+}
+
+.pmg3 {
+  background-image: url("http://bit.ly/2pjE8Cl");
+  min-height: 400px;
+}
+
+section {
+  text-align: center;
+  padding: 50px 80px;
+  background: #232526;
+  background: -webkit-gradient(linear, left top, right top, from(#414345), to(#232526));
+  background: linear-gradient(to right, #414345, #232526);
+}
+
+.hometext {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 27px;
+  letter-spacing: 8px;
+  font-weight: 700;
+  text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+}
+
+hr {
+  width: 500px;
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.control-label {
+  color: #666;
+}
+
+.imgme {
+  border-radius: 8px;
+  height: 400px;
+}
+
+.aboutp {
+  padding-top: 30px;
+}
+
+.hometext .name {
+  padding-top: 20px;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+section {
+  padding: 60px 0;
+  /* min-height: 100vh;*/
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-area {
+  border-bottom: 1px solid #353C46;
+}
+
+.contact-content p {
+  font-size: 15px;
+  margin: 30px 0 60px;
+  position: relative;
+}
+
+.contact-content p::after {
+  background: #353C46;
+  bottom: -30px;
+  content: "";
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  width: 80%;
+}
+
+.contact-content h6 {
+  color: #8b9199;
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.contact-content span {
+  color: #353c47;
+  margin: 0 10px;
+}
+
+.contact-social {
+  margin-top: 30px;
+}
+
+.contact-social > ul {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.contact-social ul li a {
+  border: 1px solid #8b9199;
+  color: #8b9199;
+  display: inline-block;
+  height: 40px;
+  margin: 0 10px;
+  padding-top: 7px;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  width: 40px;
+}
+
+.contact-social ul li a:hover {
+  border: 1px solid #FAB702;
+  color: #FAB702;
+}
+
+.contact-content img {
+  max-width: 210px;
+}
+
+section, footer {
+  background: #1A1E25;
+  color: #868c96;
+}
+
+footer p {
+  padding: 40px 0;
+  text-align: center;
+}
+
+footer img {
+  width: 44px;
+}
+/*# sourceMappingURL=style.css.map */

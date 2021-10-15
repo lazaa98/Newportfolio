@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazar Branković</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+</head>
+<body>
+   
+  
+  <header>
+
+    <div class="container">
+        <nav class="navbar">
+            <a href="#" class="logo">Lazar Branković</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#contactform">Contact</a></li>
+            </ul>
+            <i class="fas fa-bars fa-2x" id="burger"></i>
+        </nav>
+        <section class="showcase">
+            <h1>Welcome to my Portfolio Website</h1>
+        </section>
+    </div>
+
+    <div class="video-container">
+        <video src="https://storage.coverr.co/videos/GK300Fvvg4T1LYiC9SJpUAK36CDldcR7A?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjE0NzE0NjcxfQ.EnOnRFM1w-1SJY_AfEhhjR6S_dPgXx0lj1kKMvZheTk" autoplay loop muted></video>
+    </div>
+
+</header>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+
+    <!-- Beginning of   Main content -->
+
+  
+      <section id="about" class="section1">
+        <h2>About me</h2>
+        <img class="imgme" src='/rsz_face.png' alt="Lazar image">
+       
+        <p class="aboutp">
+            I'm Lazar Branković and i'm 22 year old. I finished my studies at "School of Electrical and Computer Engineering of Applied Studies" ,
+            <br>
+        I am eager to learn, I am a communicative and a good teammate
+        </p>
+        <p class="aboutp">
+            Ja sam Lazar Branković, imam 22 godine i diplomirao sam na "Visoka škola elektrotehnike i računarstva"
+            <br>
+        Imam želju za učenjem i usavršavanjem, komunikativan sam i dobar saigrač.
+        </p>
+      </section>
+  
+    <div class="pmg3">
+        <div class="hometext">
+          <span class="border">
+           MY PROJECTS
+          </span>
+        </div>
+      </div>
+    
+    <div id="portfolio" class="section2">
+      <figure class="project">
+        <img src="/wb.png">
+        <figurecaption>
+          <span class="title">MAGENTO</span>
+          
+        </figurecaption>
+        <p class="description">
+             Multi-language web store
+          </p>
+      </figure>
+      <figure class="project">
+        <img src="/hck.png">
+        <figurecaption>
+          <span class="title">WORDPRESS CUSTOM THEME (ACF)</span>
+          
+        </figurecaption>
+        <p class="description">
+             Car repair company
+          </p>
+      </figure>
+      <figure class="project">
+        <img src="/преузимање.jpg">
+        <figurecaption>
+          <span class="title">WORDPRESS CUSTOM THEME (ACF)</span>
+          
+        </figurecaption>
+        <p class="description">
+             Real estate company 
+          </p>
+      </figure>
+      <figure class="project">
+        <img src="/qmm.png">
+        <figurecaption>
+          <span class="title">WORDPRESS CUSTOM THEME (ACF)</span>
+          
+        </figurecaption>
+        <p class="description">
+             Complex hospital searching website
+          </p>
+      </figure>
+      <figure class="project">
+        <img src="/asd.png">
+        <figurecaption>
+          <span class="title">LANDING PAGE</span>
+          
+        </figurecaption>
+        <p class="description">
+          </p>
+      </figure>
+      <figure class="project">
+        <img src="/преузимање (1).png">
+        <figurecaption>
+          <span class="title">LANDING PAGE</span>
+          
+        </figurecaption>
+        <p class="description">
+          </p>
+      </figure>
+    </div>
+    
+      <form class="my-form" id="contactform" method="GET" action="mailto:lazarbrankovic98@gmail.com" enctype="text/plain">
+        <div class="container">
+          <h1>Get in touch!</h1>
+          <ul>
+            <li>
+              <select>
+                <option selected disabled>-- Please choose an option --</option>
+                <option>Job Offer</option>
+                <option>Personal Questions</option>
+                <option>Other</option>      
+              </select>
+            </li>
+            <li>
+              <div class="grid grid-2">
+                <input type="text" placeholder="First Name" required>  
+                <input type="text" placeholder="Last" required>
+              </div>
+            </li>
+            <li>
+              <div class="grid grid-2">
+                <input type="email" placeholder="Email" required>  
+                <input type="tel" placeholder="Phone">
+              </div>
+            </li>    
+            <li>
+              <textarea placeholder="Message"></textarea>
+            </li>   
+            <li>
+              <input type="checkbox" id="terms">
+              <label for="terms">I am not a robot.</label>
+            </li>  
+            <li>
+              <div class="grid grid-3">
+                <div class="required-msg">REQUIRED FIELDS</div>
+                <button class="btn-grid" type="submit" disabled>
+                  <span class="back">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/email-icon.svg" alt="">
+                  </span>
+                  <span class="front">SUBMIT</span>
+                </button>
+                <button class="btn-grid" type="reset" disabled>
+                  <span class="back">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/eraser-icon.svg" alt="">
+                  </span>
+                  <span class="front">RESET</span>
+                </button> 
+              </div>
+            </li>    
+          </ul>
+        </div>
+      </form>
+    <footer>
+      <section class="contact-area" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="contact-content text-center">
+
+                        <div class="contact-social">
+                            <ul>
+                                <li><a target="_blank" class="hover-target" href="https://www.facebook.com/lazar.brankovic.9/"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a target="_blank" class="hover-target" href="https://linkedin.com/in/lazar-brankovic"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a target="_blank" href="https://instagram.com/brankovic.98" class="hover-target"><i class="fab fa-instagram"></i></a></li>
+                                <li><a class="hover-target" href="mailto:lazarbrankovic98@gmail.com"><i class="fas fa-envelope"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =============== 1.9 Contact Area End ====================-->
+    <!-- =============== 1.9 Footer Area Start ====================-->
+    <footer>
+        <p>Copyright &copy; Lazar Branković 2021 All Rights Reserved.</p>
+    </footer>
+    </footer>
+    <script type="text/javascript" src="/script.js"></script>
+  </body>
+</html>
