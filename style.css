@@ -1,4 +1,11 @@
 @charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body,
 html {
   height: 100%;
@@ -24,7 +31,7 @@ html {
   display: none;
   position: fixed;
   bottom: 20px;
-  right: 300px;
+  right: 100px;
   z-index: 99;
   font-size: 18px;
   border: 1px solid #bbc800;
@@ -247,7 +254,7 @@ body {
 
 .my-form input[type="checkbox"] + label::before,
 .my-form input[type="checkbox"] + label::after {
-  content: '';
+  content: "";
   position: absolute;
 }
 
@@ -324,13 +331,13 @@ body {
 }
 
 .project img {
-  opacity: .5;
+  opacity: 0.5;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
-  -webkit-transition: opacity .35s linear, -webkit-transform .35s ease;
-  transition: opacity .35s linear, -webkit-transform .35s ease;
-  transition: opacity .35s linear, transform .35s ease;
-  transition: opacity .35s linear, transform .35s ease, -webkit-transform .35s ease;
+  -webkit-transition: opacity 0.35s linear, -webkit-transform 0.35s ease;
+  transition: opacity 0.35s linear, -webkit-transform 0.35s ease;
+  transition: opacity 0.35s linear, transform 0.35s ease;
+  transition: opacity 0.35s linear, transform 0.35s ease, -webkit-transform 0.35s ease;
   width: 100%;
 }
 
@@ -342,8 +349,8 @@ body {
   bottom: 0px;
   left: 0;
   padding: 7px;
-  -webkit-transition: color .35s ease, background .35s ease;
-  transition: color .35s ease, background .35s ease;
+  -webkit-transition: color 0.35s ease, background 0.35s ease;
+  transition: color 0.35s ease, background 0.35s ease;
 }
 
 .project .description {
@@ -368,7 +375,7 @@ body {
 
 .project:hover .description {
   left: calc(-33% + 1px);
-  opacity: .5;
+  opacity: 0.5;
 }
 
 /* toggle .attention for touch and focus events in js for mobile and people not using a mouse */
@@ -380,33 +387,22 @@ body {
 
 .project.attention .description {
   left: calc(-33% - 8px);
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .more-link {
   background: #d01516;
   padding: 3px 10px;
   border-radius: 10px;
-  -webkit-transition: opacity .5s;
-  transition: opacity .5s;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
   text-decoration: none;
   color: white;
 }
 
 .more-link:hover,
 .more-link:active {
-  opacity: .75;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Montserrat',sans-serif;
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden;
+  opacity: 0.75;
 }
 
 header {
@@ -464,7 +460,7 @@ header .container .navbar .nav-links li a {
 
 header .container .navbar .nav-links li a::after {
   position: absolute;
-  content: '';
+  content: "";
   background-color: #fff;
   bottom: -5px;
   left: 0;
@@ -518,13 +514,26 @@ header .video-container video {
 }
 
 header .video-container::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.82);
+}
+
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: -webkit-gradient(linear, left top, right top, from(#bbc800), to(#9a9a9a));
+  background: linear-gradient(to right, #bbc800, #9a9a9a);
+  width: 0%;
+  z-index: 100;
+  -webkit-transition: width 0.2s ease-out;
+  transition: width 0.2s ease-out;
 }
 
 @media (max-width: 850px) {
@@ -599,6 +608,7 @@ header .video-container::after {
   }
   #myBtn {
     right: 30px;
+    padding: 10px;
   }
 }
 
@@ -701,7 +711,7 @@ ul {
 }
 
 .contact-area {
-  border-bottom: 1px solid #353C46;
+  border-bottom: 1px solid #353c46;
 }
 
 .contact-content p {
@@ -711,7 +721,7 @@ ul {
 }
 
 .contact-content p::after {
-  background: #353C46;
+  background: #353c46;
   bottom: -30px;
   content: "";
   height: 1px;
@@ -757,16 +767,17 @@ ul {
 }
 
 .contact-social ul li a:hover {
-  border: 1px solid #FAB702;
-  color: #FAB702;
+  border: 1px solid #fab702;
+  color: #fab702;
 }
 
 .contact-content img {
   max-width: 210px;
 }
 
-section, footer {
-  background: #1A1E25;
+section,
+footer {
+  background: #1a1e25;
   color: #868c96;
 }
 
