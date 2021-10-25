@@ -8,6 +8,7 @@
 
 body,
 html {
+  cursor: none;
   height: 100%;
   font-size: 16px;
   font-weight: 400;
@@ -38,7 +39,7 @@ html {
   outline: none;
   background-color: #1b1b1b;
   color: white;
-  cursor: pointer;
+  cursor: none;
   padding: 15px;
   border-radius: 4px;
   -webkit-transition: all 0.3s;
@@ -450,6 +451,7 @@ header .container .navbar .nav-links li {
 }
 
 header .container .navbar .nav-links li a {
+  cursor: none;
   text-decoration: none;
   color: #fff;
   margin: 0 1.25rem;
@@ -523,6 +525,20 @@ header .video-container::after {
   background-color: rgba(0, 0, 0, 0.82);
 }
 
+.cursorCustom {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #bbc800;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 99999;
+  -webkit-backdrop-filter: sepia(90%);
+          backdrop-filter: sepia(90%);
+}
+
 #progressBar {
   position: fixed;
   top: 0;
@@ -537,6 +553,9 @@ header .video-container::after {
 }
 
 @media (max-width: 850px) {
+  .cursorCustom {
+    display: none;
+  }
   header .container .navbar .nav-links {
     position: absolute;
     top: 0;

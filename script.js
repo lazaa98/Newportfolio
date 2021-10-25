@@ -5,8 +5,6 @@ burger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 })
 
-
-
 const checkbox = document.querySelector('.my-form input[type="checkbox"]');
 const btns = document.querySelectorAll(".my-form button");
 
@@ -16,8 +14,6 @@ checkbox.addEventListener("change", function() {
     checked ? (btn.disabled = false) : (btn.disabled = true);
   }
 });
-
-
 
 var mybutton = document.getElementById("myBtn");
 
@@ -55,3 +51,14 @@ const animateProgressBar = () => {
 };
 
 window.addEventListener('scroll',animateProgressBar);
+
+let mouseCursor = document.querySelector('.cursorCustom');
+let navLinksCustom = document.querySelector('.nav-links li');
+
+window.addEventListener('mousemove', cursor);
+
+function cursor(e){
+    mouseCursor.style.top = e.pageY + 'px';
+    mouseCursor.style.left = e.pageX + 'px';
+}
+

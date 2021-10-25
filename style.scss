@@ -6,6 +6,7 @@
 
 body,
 html {
+  cursor: none;
   height: 100%;
   font-size: 16px;
   font-weight: 400;
@@ -35,7 +36,7 @@ html {
   outline: none;
   background-color: #1b1b1b;
   color: white;
-  cursor: pointer;
+  cursor: none;
   padding: 15px;
   border-radius: 4px;
   transition: all 0.3s;
@@ -373,6 +374,7 @@ header {
         li {
           list-style-type: none;
           a {
+            cursor: none;
             text-decoration: none;
             color: #fff;
             margin: 0 1.25rem;
@@ -443,6 +445,18 @@ header {
   }
 }
 
+.cursorCustom {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #bbc800;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 99999;
+  backdrop-filter: sepia(90%);
+}
+
 #progressBar {
   position: fixed;
   top: 0;
@@ -455,6 +469,9 @@ header {
 }
 
 @media (max-width: 850px) {
+  .cursorCustom {
+    display: none;
+  }
   header {
     .container {
       .navbar {
