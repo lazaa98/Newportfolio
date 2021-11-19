@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 </head>
 <body>
-   
+<div id="preloader"></div>
 <div class="cursorCustom"></div>
 <div id="sectionWrap">
   <header>
@@ -203,5 +203,11 @@
 </div>
     <div id="progressBar"></div>
     <script type="text/javascript" src="/script.js"></script>
+    <script>
+      var preloadGif = document.getElementById("preloader");
+      window.addEventListener("load",function(){
+        preloadGif.style.display = "none";
+      })
+    </script>
   </body>
 </html>
