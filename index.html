@@ -204,10 +204,13 @@
     <div id="progressBar"></div>
     <script type="text/javascript" src="/script.js"></script>
     <script>
-      var preloadGif = document.getElementById("preloader");
+      
+    var preloadGif = document.getElementById("preloader");
       window.addEventListener("load",function(){
-        preloadGif.style.display = "none";
-      })
+        setTimeout(function(){
+          preloadGif.style.display = "none";
+      }, 1500);
+      }) 
     </script>
   </body>
 </html>
