@@ -672,6 +672,12 @@ header .video-container::after {
     display: -ms-grid;
     display: grid;
     justify-items: center;
+    -ms-grid-columns: unset;
+        grid-template-columns: unset;
+  }
+  .rpsGame {
+    padding: 0 20px;
+    text-align: center;
   }
   #myBtn {
     right: 30px;
